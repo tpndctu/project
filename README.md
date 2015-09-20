@@ -1,4 +1,4 @@
-# project
+#### Project Infomation
 
 ###### Install Node JS:  
 * `sudo apt-get install npm`
