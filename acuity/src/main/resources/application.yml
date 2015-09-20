@@ -10,4 +10,4 @@ spring:
       database-platform: org.hibernate.dialect.MySQL5Dialect
       show-sql: false
 server:
-    port: 8888
+    port: 8080
