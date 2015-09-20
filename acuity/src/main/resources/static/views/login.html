@@ -1,0 +1,24 @@
+<div>
+	<section class="container login-form">
+		<section>
+			<form role="login" ng-submit="login()">
+				<img src="images/logo.png" alt="" class="img-responsive" />
+				<div class="form-group">
+					<input type="text" name="studentid" required class="form-control"
+						placeholder="Student id" ng-model="credentials.username" /> <span
+						class="glyphicon glyphicon-user"></span>
+				</div>
+				<div class="form-group">
+					<input type="password" name="password" required
+						class="form-control" placeholder="Enter password"
+						ng-model="credentials.password" /> <span
+						class="glyphicon glyphicon-lock"></span>
+				</div>
+				<div class="alert alert-danger" ng-show="error">There was a
+					problem logging in. Please try again.</div>
+				<button type="submit" name="go" class="btn btn-primary btn-block">Login
+					Now</button>
+			</form>
+		</section>
+	</section>
+</div>
