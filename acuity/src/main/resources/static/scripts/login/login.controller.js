@@ -1,7 +1,7 @@
 app
 	.controller('LoginController',function($rootScope,$scope,$http,$location){
 		$scope.authenticate = function(callback){
-			$http.get('users')
+			$http.get('api/users')
 				.success(function(data){
 					if (data.name) {
 						$rootScope.authenticated = true;
