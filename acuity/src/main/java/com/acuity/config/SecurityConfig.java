@@ -30,17 +30,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		// http.authorizeRequests().antMatchers("/app/").hasRole("USER").and().formLogin();
-		http
-			.authorizeRequests()
-			.antMatchers("/**", "/styles/**", "/scripts/**", "/views/**")
-			.permitAll()
-			.antMatchers("/api/**")
-			.authenticated()
-		.and()
-			.formLogin()
-		.and()
-			.addFilterAfter(new CsrfHeaderFilter(), CsrfFilter.class).csrf()
-			.csrfTokenRepository(csrfTokenRepository()).and().logout();
+		 http
+         .authorizeRequests()
+         .antMatchers("/**", "/styles/**", "/scripts/**", "/views/**")
+         .permitAll()
+         .anyRequest()
+         .authenticated()
+             .and()
+         .formLogin().and().addFilterAfter(new CsrfHeaderFilter(), CsrfFilter.class)
+         .csrf().csrfTokenRepository(csrfTokenRepository())
+             .and()
+         .logout();
 	}
 	
 	@Override
