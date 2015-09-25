@@ -4,6 +4,6 @@ app
 			.state('home',{
 				url: '/home',
 				templateUrl: 'views/home/home.html',
-				controller : 'HomeController'
+				controller : 'LoginController'
 			});
 	});

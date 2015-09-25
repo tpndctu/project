@@ -1,12 +1,15 @@
 app
-	.factory('Auth',function(){
-		var authenticated = false;
-		return {
-			isAuthenticated: function(){
-				return authenticated;
-			},
-			setAuthenticated: function(newAuthenticated){
-				authenticated = newAuthenticated;
-			}
+	.factory('Auth', function($rootScope, $timeout){
+		var service = {};
+		service.authenticated = false;
+		service.setAuthenticated = function(newAuthenticated){
+			this.authenticated = newAuthenticated;
+			$timeout(function(){
+		         $rootScope.$broadcast('data_shared');
+		    },100);
 		};
+		service.getAuthenticated = function(){
+			return this.authenticated;
+		};
+		return service;
 	});

@@ -1,4 +1,4 @@
 app
-	.controller('HomeController',function($rootScope, $scope, Auth){
-		$scope.authenticated = Auth.isAuthenticated;
-	});
+	.controller('HomeController',['$scope', 'Auth' ,function($scope, Auth){
+		
+	}]);
