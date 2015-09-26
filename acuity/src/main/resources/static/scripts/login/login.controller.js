@@ -2,13 +2,12 @@ app
 		.controller(
 				'LoginController',['$rootScope', '$scope', '$http', '$location','Auth',
 				function($rootScope, $scope, $http, $location, Auth) {
+					$scope.$on('data_shared',function(){
+					      var temp = Auth.getAuthenticated();
+					      console.log(temp);
+					      $scope.authenticated = temp;
+					});
 					$scope.authenticate = function(callback) {
-						$scope.$on('data_shared',function(){
-						      var temp = Auth.getAuthenticated();
-						      console.log(temp);
-						      $scope.authenticated = temp;
-						});
-						
 						$http.get('api/users').success(function(data) {
 							if (data.name) {
 								//$rootScope.authenticated = true;

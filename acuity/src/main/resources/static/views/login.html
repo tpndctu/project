@@ -1,24 +1,36 @@
-<div>
-	<section class="container login-form">
-		<section>
-			<form role="login" ng-submit="login()">
-				<img src="images/logo.png" alt="" class="img-responsive" />
-				<div class="form-group">
-					<input type="text" name="studentid" required class="form-control"
-						placeholder="Student id" ng-model="credentials.username" /> <span
-						class="glyphicon glyphicon-user"></span>
+<div class="container-fluid" id="fulldiv">
+	<div class="row">
+		<div class="col-md-5">
+			<div class="alert alert-info">
+  				<h2><strong>Acuity Project</strong></h2>
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">Login</div>
+				<div class="panel-body">
+					<form role="login" ng-submit="login()">
+						<div style="margin-bottom: 25px" class="input-group">
+							<span class="input-group-addon">
+								<i class="glyphicon glyphicon-user"></i>
+							</span> 
+							<input id="login-password"
+								type="password" class="form-control" name="password"
+								placeholder="Enter id" ng-model="credentials.username">
+						</div>
+						<div style="margin-bottom: 25px" class="input-group">
+							<span class="input-group-addon">
+								<i class="glyphicon glyphicon-lock"></i>
+							</span> 
+							<input id="login-password"
+								type="password" class="form-control" name="password"
+								placeholder="Enter password" ng-model="credentials.password">
+						</div>
+						<button type="submit" class="btn btn-success btn-block">Login</button>
+					</form>
+					<div class="alert alert-danger" ng-show="error">
+  						<strong>Login fail!</strong>&nbsp;Id or password invalid
+					</div>
 				</div>
-				<div class="form-group">
-					<input type="password" name="password" required
-						class="form-control" placeholder="Enter password"
-						ng-model="credentials.password" /> <span
-						class="glyphicon glyphicon-lock"></span>
-				</div>
-				<div class="alert alert-danger" ng-show="error">There was a
-					problem logging in. Please try again.</div>
-				<button type="submit" name="go" class="btn btn-primary btn-block">Login
-					Now</button>
-			</form>
-		</section>
-	</section>
+			</div>
+		</div>
+	</div>
 </div>

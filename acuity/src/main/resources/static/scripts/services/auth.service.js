@@ -4,9 +4,7 @@ app
 		service.authenticated = false;
 		service.setAuthenticated = function(newAuthenticated){
 			this.authenticated = newAuthenticated;
-			$timeout(function(){
-		         $rootScope.$broadcast('data_shared');
-		    },100);
+			$rootScope.$broadcast('data_shared');
 		};
 		service.getAuthenticated = function(){
 			return this.authenticated;
