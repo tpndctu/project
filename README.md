@@ -12,3 +12,6 @@
 * `bower install bootstrap`
 * `mvn spring-boot:run`
 
+##### Task:
+* Task 1: Create page "User Info"(show info user).
+* 
