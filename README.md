@@ -14,4 +14,5 @@
 
 ##### Task:
 * Task 1: Create page "User Info"(show info user).
-* 
+* Task 2: Create page Manger User (Tag Manager Student, Manager Teacher)
+* Task 3: Implement coding Manager student ()
