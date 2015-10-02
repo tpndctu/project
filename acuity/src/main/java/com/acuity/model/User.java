@@ -16,6 +16,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name = "users")
@@ -31,7 +33,8 @@ public class User implements Serializable {
 
 	@Column(name = "username")
 	private String username;
-
+	
+	@JsonIgnore
 	@Column(name = "password")
 	private String password;
 

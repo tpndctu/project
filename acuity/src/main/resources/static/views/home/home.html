@@ -26,17 +26,19 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-3">
-			<a href=""><strong><i class="glyphicon glyphicon-menu"></i>
-					Menu</strong></a>
+			<strong><i class="glyphicon glyphicon-align-right"></i>&nbsp Menu</strong>
 			<hr>
 			<ul class="nav nav-stacked">
+				<li class="nav-header bgmenu">
+					<a ui-sref="home.userinfo"> <i class="glyphicon glyphicon-home"></i>&nbsp User Information </a>
+				</li>
 				<li class="nav-header">
-					<a data-toggle="collapse" data-target="#admin" class="alert alert-info">
-						Admin
+					<a data-toggle="collapse" data-target="#admin" class="bgmenu">
+						<i class="glyphicon glyphicon-queen"></i>&nbsp Admin
 					</a>
 					<ul class="nav nav-stacked collapse in" id="admin">
 						<li class="active">
-							<a href="#">
+							<a href="#" ui-sref="home.manageraccount">
 								<i class="glyphicon glyphicon-user"></i>&nbsp Manager Account
 							</a>
 						</li>
@@ -53,6 +55,8 @@
 		<div class="col-sm-9">
 			<strong>Manager Schools</strong>
 			<hr>
+			<div ui-view>
+			</div>
 		</div>
 	</div>
 </div>
