@@ -10,7 +10,7 @@ app
 					$scope.authenticate = function(callback) {
 						$http.get('api/users').success(function(data) {
 							if (data.name) {
-								//$rootScope.authenticated = true;
+								$rootScope.name = data.name;
 								var isAuthenticated = true;
 								Auth.setAuthenticated(isAuthenticated);
 							} else {

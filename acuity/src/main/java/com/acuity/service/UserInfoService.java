@@ -14,4 +14,12 @@ public class UserInfoService {
 	public User getUserByUserName(String username){
 		return user.findByUsername(username);
 	}
+	
+	public void updateUser(User userInfo){
+		user.saveAndFlush(userInfo);
+	}
+	
+	public User findOne(long id){
+		return user.findOne(id);
+	}
 }

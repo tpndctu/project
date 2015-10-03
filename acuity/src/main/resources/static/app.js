@@ -1,1 +1,1 @@
-var app = angular.module('Acuity',['ui.router']);
+var app = angular.module('Acuity',['ui.router','ngResource']);

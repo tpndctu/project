@@ -1,14 +1,17 @@
 /**
- * @author: dhnhan
+ * author: dhnhan
  */
 app
-	.factory('UserInfoService',function($http){
-		var service = {};
-		service.getUser = function () {
-            return $http.get('api/userinfo/admin').then(function (response) {
-                return response.data;
-            });
-        };
-        return service;
+	.factory('User', function ($resource) {
+	    return $resource('api/userinfo/:id', {}, {
+	        'query': { method: 'GET', isArray: true},
+	        'get': {
+	            method: 'GET',
+	            transformResponse: function (data) {
+	                data = angular.fromJson(data);
+	                return data;
+	            }
+	        },
+	        'update': { method:'PUT' }
+	    });
 	});
-	

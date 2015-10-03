@@ -7,6 +7,6 @@ app
 			.state('home.userinfo',{
 				url: '/userinfo',
 				templateUrl: 'views/home/userinfo.html',
-				controller: 'UserInfoController'
+				controller: 'UserInfoController',
 			});
 	});
