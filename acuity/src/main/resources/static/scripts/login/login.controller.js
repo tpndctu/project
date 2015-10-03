@@ -53,7 +53,7 @@ app
 										}).success(function(data) {
 									$scope.authenticate(function() {
 										if (Auth.getAuthenticated() === true) {
-											$location.path("/home");
+											$location.path("/home/userinfo");
 											$scope.error = false;
 										} else {
 											$location.path("/");

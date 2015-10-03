@@ -1,54 +1,37 @@
-
-<div class="panel panel-info">
-	<div class="panel-heading" align="center">User Information</div>
-	<br>
-	<div class="row">
-		<div class="col-sm-9"></div>
-		<div class="col-sm-3">
-			<button type="button" class="btn btn-success btn-sm" ng-click="showUpdate()">
-				<span class="glyphicon glyphicon-edit"></span> &nbsp;<span>Edit
-					profile</span>
-			</button>
-		</div>
-	</div>
-	<div class="panel-body">
-		<div class="row">
-			<div class="col-sm-1"></div>
-			<div class="col-sm-10">
-				<div style="margin-bottom: 25px" class="input-group">
-					<span class="input-group-addon"> <i
-						class="glyphicon glyphicon-user"></i>
-					</span> <input type="text" class="form-control"
-						ng-model="userinfo.username" placeholder="User name" disabled>
-				</div>
-				<div style="margin-bottom: 25px" class="input-group">
-					<span class="input-group-addon"> <i
-						class="glyphicon glyphicon-envelope"></i>
-					</span> <input type="text" class="form-control" ng-model="userinfo.email"
-						placeholder="Email" disabled>
-				</div>
-				<div style="margin-bottom: 25px" class="input-group">
-					<span class="input-group-addon"> <i
-						class="glyphicon glyphicon-font"></i>
-					</span> <input type="text" class="form-control"
-						ng-model="userinfo.firstName" placeholder="First name" disabled>
-				</div>
-				<div style="margin-bottom: 25px" class="input-group">
-					<span class="input-group-addon"> <i
-						class="glyphicon glyphicon-bold"></i>
-					</span> <input type="text" class="form-control"
-						ng-model="userinfo.lastName" placeholder="Last name" disabled>
-				</div>
-				<div style="margin-bottom: 25px" class="input-group">
-					<span class="input-group-addon"> <i
-						class="glyphicon glyphicon-calendar"></i>
-					</span> <input type="date" class="form-control"
-						ng-model="userinfo.birthDate" placeholder="Birth Date" disabled>
-				</div>
-			</div>
-		</div>
-	</div>
+<a><strong><i class="glyphicon glyphicon-user"></i>&nbsp User Information</strong></a>
+<hr>
+<div align="right">
+	<button type="button" class="btn btn-danger btn-sm">
+		<span class="glyphicon glyphicon-repeat"></span> &nbsp;<span>Change password</span>
+	</button>
+	<button type="button" class="btn btn-success btn-sm" ng-click="showUpdate()">
+		<span class="glyphicon glyphicon-edit"></span> &nbsp;<span>Edit
+			profile</span>
+	</button>
 </div>
+<hr>
+	<table class="table table-striped small">
+		<tr>
+			<td width="5%" align="left">User Name: </td>
+			<td width="40%">{{userinfo.username}}</td>
+		</tr>
+		<tr>
+			<td width="5%" align="left">Email: </td>
+			<td width="40%">{{userinfo.email}}</td>
+		</tr>
+		<tr>
+			<td width="5%" align="left">First Name: </td>
+			<td width="40%">{{userinfo.firstName}}</td>
+		</tr>
+		<tr>
+			<td width="5%" align="left">Last Name: </td>
+			<td width="40%">{{userinfo.lastName}}</td>
+		</tr>
+		<tr>
+			<td width="5%" align="left">Birth Date: </td>
+			<td width="40%">{{userinfo.birthDate | date}}</td>
+		</tr>
+	</table>
 
 <div layout-fill>
 	<div class="modal fade" id="saveUserInfo" tabindex="-1"

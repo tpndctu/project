@@ -7,7 +7,7 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#/home">Acuity</a>
+			<a class="navbar-brand" href="#/home/userinfo">Acuity</a>
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
@@ -26,7 +26,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-3">
-			<strong><i class="glyphicon glyphicon-align-right"></i>&nbsp Menu</strong>
+			<a><strong><i class="glyphicon glyphicon-align-right"></i>&nbsp Menu</strong></a>
 			<hr>
 			<ul class="nav nav-stacked">
 				<li class="nav-header bgmenu">
@@ -36,7 +36,7 @@
 					<a data-toggle="collapse" data-target="#admin" class="bgmenu">
 						<i class="glyphicon glyphicon-queen"></i>&nbsp Admin
 					</a>
-					<ul class="nav nav-stacked collapse in" id="admin">
+					<ul class="nav nav-stacked collapse" id="admin">
 						<li class="active">
 							<a href="#" ui-sref="home.manageraccount">
 								<i class="glyphicon glyphicon-user"></i>&nbsp Manager Account
@@ -53,8 +53,6 @@
 		</div>
 		<!-- /col-3 -->
 		<div class="col-sm-9">
-			<strong>Manager Schools</strong>
-			<hr>
 			<div ui-view>
 			</div>
 		</div>
