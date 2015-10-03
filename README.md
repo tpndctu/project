@@ -10,6 +10,7 @@
 * `cd acuity/src/main/resources/static`
 * `bower install angular-ui-router`
 * `bower install bootstrap`
+* `bower install angular-resource`
 * `mvn spring-boot:run`
 
 ##### Task:
