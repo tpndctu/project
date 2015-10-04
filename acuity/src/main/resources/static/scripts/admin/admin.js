@@ -9,4 +9,5 @@ app
 				templateUrl: 'views/admin/manageraccount.html',
 				controller: 'ManagerAccountController'
 			});
+		
 	});
