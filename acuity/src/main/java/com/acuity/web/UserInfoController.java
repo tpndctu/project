@@ -6,6 +6,7 @@ package com.acuity.web;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.acuity.model.User;
+import com.acuity.model.utils.PasswordChange;
 import com.acuity.service.UserInfoService;
 
 /**
@@ -52,4 +54,20 @@ public class UserInfoController {
 		return ResponseEntity.ok().build();
 	}
 
+	@RequestMapping(value = "/userinfo/changepassword", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> changePassword(@RequestBody PasswordChange password) {
+		if (!checkPassword(password.getPasswordNew())) {
+			return new ResponseEntity<>("Incorrect password", HttpStatus.BAD_REQUEST);
+		}
+		userInfoService.changePassword(password.getUsername(), password.getPasswordNew());
+		log.debug("changed password : {}",password.getPasswordNew());
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
+	
+	private boolean checkPassword(String password){
+		if (password.length() >= 6 && password.length() <=20) {
+			return true;
+		}
+		return false;
+	}
 }
