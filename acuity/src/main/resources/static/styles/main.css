@@ -40,4 +40,10 @@ footer {
   -o-border-radius: 10px;
   border-radius: 10px;
 }
-
+.msg-block {
+    margin-top:5px;
+}
+.msg-error {
+    color:#F00;
+    font-size:14px;
+}

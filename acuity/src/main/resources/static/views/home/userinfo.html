@@ -1,7 +1,7 @@
 <a><strong><i class="glyphicon glyphicon-user"></i>&nbsp User Information</strong></a>
 <hr>
 <div align="right">
-	<button type="button" class="btn btn-danger btn-sm">
+	<button type="button" class="btn btn-danger btn-sm" ng-click="showChangePassword()">
 		<span class="glyphicon glyphicon-repeat"></span> &nbsp;<span>Change password</span>
 	</button>
 	<button type="button" class="btn btn-success btn-sm" ng-click="showUpdate()">
@@ -32,6 +32,10 @@
 			<td width="40%">{{userinfo.birthDate | date}}</td>
 		</tr>
 	</table>
+<<<<<<< HEAD
+=======
+<!-- modal save user info -->
+>>>>>>> 4b02beeaf316068dcee13ded0c856b4d45891fa0
 <div layout-fill>
 	<div class="modal fade" id="saveUserInfo" tabindex="-1"
 		role="dialog" aria-labelledby="saveUserInfo" aria-hidden="true">
@@ -84,3 +88,46 @@
 		</div>
 	</div>
 </div>
+<!-- end modal save user info -->
+<!-- modal password change -->
+<div layout-fill>
+	<div class="modal fade" id="changePassword" tabindex="-1"
+		role="dialog" aria-labelledby="changePassword" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form name="editForm" role="form" novalidate ng-submit="changePass()"
+					show-validation>
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="changePassword">Change password</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label>Password new</label> 
+							<input type="password" class="form-control" name="passwordFirst" ng-model="passwordFirst" required ng-minlength="6" ng-maxlength="20">
+						</div>
+						<div class="form-group">
+							<label>Confirm password</label>
+							 <input type="password" class="form-control" name="passwordSecond" ng-model="passwordSecond" pw-check="passwordFirst" required ng-minlength="6" ng-maxlength="20">
+						</div>
+						<div class="msg-block" ng-show="editForm.$error">
+						 <span class="msg-error" ng-show="editForm.passwordSecond.$error.pwmatch">
+						 	Password don't match or too short password.
+						 </span>
+						 </div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+							<span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+						</button>
+						<button type="submit" class="btn btn-primary" ng-disabled="(editForm.$error && editForm.passwordSecond.$error.pwmatch) || editForm.$invalid">
+							<span class="glyphicon glyphicon-repeat"></span>&nbsp;<span>Change Password</span>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end modal password change -->
