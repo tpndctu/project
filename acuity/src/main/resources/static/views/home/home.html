@@ -1,65 +1,96 @@
-<div id="top-nav" class="navbar navbar-inverse navbar-static-top"
-	ng-if="authenticated">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-collapse">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#/home/userinfo">Acuity</a>
-		</div>
-		<div class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown"><a class="dropdown-toggle" role="button"
-					data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>
-						Admin <span class="caret"></span></a>
-					<ul id="g-account-menu" class="dropdown-menu" role="menu">
-						<li><a href="#">My Profile</a></li>
-					</ul></li>
-				<li><a ng-click="logout()"><i
-						class="glyphicon glyphicon-lock"></i> Logout</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-3">
-			<a><strong><i class="glyphicon glyphicon-align-right"></i>&nbsp Menu</strong></a>
-			<hr>
-			<ul class="nav nav-stacked">
-				<li class="nav-header bgmenu">
-					<a ui-sref="home.userinfo"> <i class="glyphicon glyphicon-home"></i>&nbsp User Information </a>
-				</li>
-				<li class="nav-header">
-					<a data-toggle="collapse" data-target="#admin" class="bgmenu">
-						<i class="glyphicon glyphicon-queen"></i>&nbsp Admin
-					</a>
-					<ul class="nav nav-stacked collapse" id="admin">
-						<li class="active">
-							<a  ui-sref="home.manageraccount">
-								<i class="glyphicon glyphicon-user"></i>&nbsp Manager Account
-							</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
-			<hr>
-			<a href="#"><strong><i class="glyphicon glyphicon-link"></i>
-					Resources</strong></a>
-			<hr>
+		<div class="col-sm-12">
+			<div id="top-nav" class="navbar navbar-inverse navbar-static-top"
+				ng-if="authenticated">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-collapse">
+							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#/home/userinfo">Acuity</a>
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown"><a class="dropdown-toggle"
+								role="button" data-toggle="dropdown"><i
+									class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+								<ul id="g-account-menu" class="dropdown-menu" role="menu">
+									<li><a href="#">My Profile</a></li>
+								</ul></li>
+							<li><a ng-click="logout()"><i
+									class="glyphicon glyphicon-lock"></i> Logout</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
-		<!-- /col-3 -->
-		<div class="col-sm-9">
+	</div>
+	<div class="row">
+		<div  class="col-sm-3">
+			<div class="nav-side-menu">
+				<div class="brand">Brand Logo</div>
+				<i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse"
+					data-target="#menu-content"></i>
+				<div class="menu-list">
+					<ul id="menu-content" class="menu-content collapse out">
+						<li><a ui-sref="home.userinfo"> <i class="glyphicon glyphicon-home"></i>
+								User Information
+						</a></li>
+						<li data-toggle="collapse" data-target="#admin"
+							class="collapsed active"><a href="#"><i
+								class="fa fa-users fa-lg"></i> Admin <span class="arrow"></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="admin">
+							<li ui-sref-active="active"><a ui-sref="home.student">Manager Student</a></li>
+							<li ui-sref-active="active"><a ui-sref="home.teacher">Manager Teacher</a></li>
+							<li ui-sref-active="active"><a ui-sref="home.major">Manger Major</a></li>
+						</ul>
+						<li data-toggle="collapse" data-target="#service"
+							class="collapsed"><a href="#"><i
+								class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="service">
+							<li>New Service 1</li>
+							<li>New Service 2</li>
+							<li>New Service 3</li>
+						</ul>
+
+
+						<li data-toggle="collapse" data-target="#new" class="collapsed">
+							<a href="#"><i class="fa fa-car fa-lg"></i> New <span
+								class="arrow"></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="new">
+							<li>New New 1</li>
+							<li>New New 2</li>
+							<li>New New 3</li>
+						</ul>
+						<li><a href="#"> <i class="fa fa-user fa-lg"></i> Profile
+						</a></li>
+
+						<li><a href="#"> <i class="fa fa-users fa-lg"></i> Users
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div  class="col-sm-9">
 			<div ui-view>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- /Main -->
 
-<footer class="text-center">
-	Acuity Project <a
-		href="https://github.com/tpndctu/project"><strong>Acuity</strong></a>
-</footer>
+
+
+
+
+
+
+
+
+
+

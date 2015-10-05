@@ -4,9 +4,9 @@
 app
 	.config(function($stateProvider){
 		$stateProvider
-			.state('home.manageraccount.student',{
+			.state('home.student',{
 				url: '/student',
-				templateUrl: 'views/student/student.html',
+				templateUrl: 'views/admin/student/student.html',
 				controller: 'ManagerStudentController'
 			});
 		
