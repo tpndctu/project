@@ -18,7 +18,6 @@ import javax.persistence.Version;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
@@ -33,7 +32,7 @@ public class User implements Serializable {
 
 	@Column(name = "username")
 	private String username;
-	
+
 	@JsonIgnore
 	@Column(name = "password")
 	private String password;
@@ -45,7 +44,7 @@ public class User implements Serializable {
 	private Set<UserRole> roles;
 
 	private String firstName;
-
+	
 	private String lastName;
 
 	@Temporal(TemporalType.DATE)
